@@ -1,19 +1,6 @@
 
 # ==========================================
-# Environment variables and secrets
-# ==========================================
-.env
-.env.*
-!.env.example
-!.env.*.example
-*.pem
-*.key
-secrets/
-credentials.json
-service-account*.json
-
-# ==========================================
-# Python virtual environments
+# PYTHON VIRTUAL ENVIRONMENTS
 # ==========================================
 venv/
 .venv/
@@ -22,7 +9,20 @@ ENV/
 virtualenv/
 
 # ==========================================
-# Python cache and compiled files
+# SECRETS AND ENVIRONMENT VARIABLES
+# ==========================================
+.env
+.env.*
+!.env.example
+!.env.*.example
+secrets/
+credentials.json
+service-account*.json
+*.pem
+*.key
+
+# ==========================================
+# PYTHON CACHE
 # ==========================================
 __pycache__/
 *.py[cod]
@@ -30,7 +30,7 @@ __pycache__/
 *.pyo
 
 # ==========================================
-# Python packaging
+# PYTHON PACKAGING
 # ==========================================
 build/
 dist/
@@ -40,7 +40,7 @@ wheels/
 pip-wheel-metadata/
 
 # ==========================================
-# IDE and editor files
+# IDE AND EDITOR FILES
 # ==========================================
 .vscode/
 .idea/
@@ -48,14 +48,14 @@ pip-wheel-metadata/
 *.sublime-project
 
 # ==========================================
-# Operating system files
+# OPERATING SYSTEM FILES
 # ==========================================
 .DS_Store
 Thumbs.db
 desktop.ini
 
 # ==========================================
-# Logs and temporary files
+# LOGS AND TEMPORARY FILES
 # ==========================================
 *.log
 logs/
@@ -67,7 +67,7 @@ temp/
 *.swo
 
 # ==========================================
-# Testing and coverage
+# TESTING AND COVERAGE
 # ==========================================
 .pytest_cache/
 .coverage
@@ -77,22 +77,17 @@ htmlcov/
 .nox/
 .mypy_cache/
 .ruff_cache/
-hypothesis/
-
-# ==========================================
-# Jupyter Notebook
-# ==========================================
 .ipynb_checkpoints/
 
 # ==========================================
-# ChromaDB local vector database
+# CHROMADB LOCAL VECTOR DATABASE
 # ==========================================
 db/chroma/
 chroma/
 chroma_db/
 
 # ==========================================
-# Generated ML models and large binaries
+# GENERATED MODEL FILES
 # ==========================================
 *.pkl
 *.pickle
@@ -103,13 +98,25 @@ chroma_db/
 *.h5
 *.keras
 *.model
-*.bin
+
+# ==========================================
+# LARGE BINARY FILES
+# ==========================================
 *.dll
 *.so
 *.dylib
 
 # ==========================================
-# Dataset files (uncomment if needed)
+# LOCAL DATABASES AND BACKUPS
+# ==========================================
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+
+# ==========================================
+# OPTIONAL DATASET EXCLUSIONS
+# Uncomment only if these should not be uploaded
 # ==========================================
 # dataset/
 # data/
@@ -117,25 +124,7 @@ chroma_db/
 # *.xlsx
 
 # ==========================================
-# Local databases and backups
-# ==========================================
-*.sqlite
-*.sqlite3
-*.db
-*.dump
-*.bak
-
-# ==========================================
-# Node.js, if a frontend is inside this repo
+# NODE.JS (IF FRONTEND EXISTS IN THIS REPO)
 # ==========================================
 node_modules/
-dist/
 coverage/
-
-# ==========================================
-# Environment-specific configuration
-# ==========================================
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
